@@ -70,6 +70,22 @@ compilers:
       check_exe: bin/zcc -h
       targets:
         - '2.2'
+    orca-c:
+      if: non-free
+      type: tarballs
+      compression: gz
+      dir: orca-c-{{name}}
+      check_file: Languages/cc
+      extract_xattrs: True
+      depends:
+        - tools/goldengate 2.0.9
+      targets:
+        - name: 2.1.0
+          url: https://redacted
+        - name: 2.2.0
+          url: https://redacted
+        - name: 2.2.1
+          url: https://redacted
     nightly:
       if: nightly
       cc65:

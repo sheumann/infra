@@ -212,6 +212,9 @@ class TarballInstallable(Installable):
         extract_only = self.config_get("extract_only", "")
         if extract_only:
             self.tar_cmd += [extract_only]
+        extract_xattrs = self.config_get("extract_xattrs", False)
+        if extract_xattrs:
+            self.tar_cmd += ["--xattrs"]
         self.strip = self.config_get("strip", False)
         self.remove_older_pattern = self.config_get("remove_older_pattern", "")
         self.num_to_keep = self.config_get("num_to_keep", 5)
